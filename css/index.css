@@ -1,0 +1,87 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.player{
+	height: 5%;
+}
+
+.dark-mode{
+	background-image: url(Bilder/vit-bakgrund.jpg);
+	color: black;
+}
+
+.column{
+	margin-top: 70px;
+	margin-left: 320px;
+	float: left;
+	width: 10%;
+	padding: 10px;
+}
+  
+.row::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+  
+.box{
+	position: relative;
+	width: 200px;
+	border-radius: 5px;
+}
+	
+.image{
+	height: 200px;
+	transition: .5s ease;
+	border-radius: 7px;
+}
+	
+.middle{
+	transition: 0.5s ease;
+	opacity: -0.1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	border-radius: 7px;
+}
+	
+.box:hover .image{
+	opacity: 0.3;
+}
+	
+.box:hover .middle{
+	opacity: 1;
+}
+	
+.text{
+	color: white;
+	font-size: 16px;
+	letter-spacing: normal;
+}
+  
+.text h1{
+	color: white;
+	font-size: 24px;
+	letter-spacing: normal;
+}
+
+#nav-index{
+	margin-bottom: 100px;
+}
+
+#dark-light-button{
+	background-color: #2e536e;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}

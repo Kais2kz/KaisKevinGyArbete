@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0 auto;
+    margin-top: 7%;
+    margin-left: 27%;
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0, 0, 0, 0.3)), url(https://worldgeography150.files.wordpress.com/2013/02/wallpaper_9623.jpg);
+    background-size: cover;
+    background-position: center;
+}

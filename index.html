@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Bilskärm </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<!-- gör det lättare för mig. man kan använda scripts i css mappen men dethär funkar lika bra -->
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- scripts som jag testade saker med. -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script>
+		var state = 'stop';
+
+function buttonBackPress() {
+    console.log("button back invoked.");
+}
+
+function buttonForwardPress() {
+    console.log("button forward invoked.");
+}
+
+function buttonRewindPress() {
+    console.log("button rewind invoked.");
+}
+
+function buttonFastforwardPress() {
+    console.log("button fast forward invoked.");
+}
+
+function buttonPlayPress() {
+    if(state=='stop'){
+      state='play';
+      var button = d3.select("#button_play").classed('btn-success', true);
+      button.select("i").attr('class', "fa fa-pause");
+    }
+    else if(state=='play' || state=='resume'){
+      state = 'pause';
+      d3.select("#button_play i").attr('class', "fa fa-play");
+    }
+    else if(state=='pause'){
+      state = 'resume';
+      d3.select("#button_play i").attr('class', "fa fa-pause");
+    }
+    console.log("button play pressed, play was "+state);
+}
+
+function buttonStopPress(){
+    state = 'stop';
+    var button = d3.select("#button_play").classed('btn-success', false);
+    button.select("i").attr('class', "fa fa-play");
+    console.log("button stop invoked.");
+}
+	</script>
+</head>
+
+<body background="Css/Bilder/bakgrund.jpg">
+	<nav class="navbar navbar-expand-sm b navbar-dark" style="background-color: #2e536e;"">
+		<!-- skapar en navbar med blå theme och vit text -->	<a class="navbar-brand" href="#">Bilskärm</a> 
+		<!-- onclick kommer att refresha sidan -->
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">	<a class="nav-link" style="margin-left:20px" href="#">Hem</a>
+				</li>
+				<li class="nav-item">	<a class="nav-link" style="margin-left:15px" onClick="window.location.reload();"></a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+	<iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF" style="margin-left: 15px; margin-top: 20px;" width="49%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://www.mapquest.com/directions/from/se/stockholm/to/se/flemingsberg" style="margin-top: 20px;" width="49%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="väder.html" style="margin-left: 15px;" width="49%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="time.html" width="49%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</html>
